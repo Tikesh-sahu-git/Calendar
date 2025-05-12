@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Universal Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="month-year">May 2023</div>
+            <div class="nav-buttons">
+                <button class="nav-button prev-month" aria-label="Previous month">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="nav-button next-month" aria-label="Next month">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days-grid" id="days-grid">
+            <!-- Days will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <button class="add-event-btn" id="add-event-btn" aria-label="Add event">+</button>
+
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Event</h3>
+                <button class="close-btn" id="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="event-color">Color</label>
+                    <select id="event-color" aria-label="Event color">
+                        <option value="#6366f1">Purple</option>
+                        <option value="#10b981">Green</option>
+                        <option value="#3b82f6">Blue</option>
+                        <option value="#ef4444">Red</option>
+                        <option value="#f59e0b">Yellow</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="event-description">Description (Optional)</label>
+                    <textarea id="event-description" rows="3" aria-label="Event description"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Add Event</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
